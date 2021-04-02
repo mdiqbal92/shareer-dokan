@@ -1,8 +1,11 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { BuyContext } from '../../App';
 
 const Checkout = () => {
     const [buy, setBuy] = useContext(BuyContext)
+    useEffect(()=>{
+        fetch()
+    })
     return (
         <div>
             {

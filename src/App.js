@@ -41,7 +41,7 @@ function App() {
           <Orders></Orders>
         </PrivateRoute>
         <PrivateRoute path="/admin">
-          <AddSharee></AddSharee>
+          <Admin></Admin>
         </PrivateRoute>
         <Route path="/deals">
           <Deals></Deals>
@@ -49,9 +49,9 @@ function App() {
         <Route path="/manage">
           <Manage></Manage>
         </Route>
-        <Route path="/checkout">
+        <PrivateRoute path="/checkout">
           <Checkout></Checkout>
-        </Route>
+        </PrivateRoute>
         <Route exact path="/">
           <Home></Home>
         </Route>

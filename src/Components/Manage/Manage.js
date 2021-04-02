@@ -4,14 +4,14 @@ const Manage = () => {
     const [allSharee, setAllSharee] = useState([])
     console.log(allSharee)
     useEffect(()=>{
-        fetch('http://localhost:5050/manage')
+        fetch('https://rhubarb-cupcake-36196.herokuapp.com/manage')
         .then(res => res.json())
         .then(data => setAllSharee(data))
     },[])
     
     const deleteItem= (id) => {
         
-        fetch(`http://localhost:5050/delete/${id}`,{
+        fetch(`https://rhubarb-cupcake-36196.herokuapp.com/delete/${id}`,{
             method: 'DELETE'
         })
         .then(res => res.json())
