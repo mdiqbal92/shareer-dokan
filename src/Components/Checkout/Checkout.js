@@ -1,16 +1,20 @@
-import React, { useContext, useEffect } from 'react';
-import { BuyContext } from '../../App';
-
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router';
 const Checkout = () => {
-    const [buy, setBuy] = useContext(BuyContext)
+    const {id} = useParams();
+    const [checkout, setCheckout] = useState()
     useEffect(()=>{
-        fetch()
-    })
+        fetch('https://rhubarb-cupcake-36196.herokuapp.com/sharee')
+        .then(res=>res.json())
+        .then(data=>setCheckout(data))
+    },[id])
+    const handleCheckout=() => {
+        console.log('Checkout Clicked')
+    }
     return (
         <div>
-            {
-                <p>Your Product{buy.name}</p>
-            }
+                <h1>Checkout</h1>
+                <button onClick={handleCheckout}>Checkout</button>
         </div>
     );
 };
