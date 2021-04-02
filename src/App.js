@@ -15,13 +15,19 @@ import NotFound from './Components/NotFound/NotFound';
 import AddSharee from './Components/AddSharee/AddSharee';
 import Login from './Components/Login/Login';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
+import Manage from './Components/Manage/Manage';
+import Checkout from './Components/Checkout/Checkout';
 
 export const UserContext = createContext();
+export const BuyContext = createContext();
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({});
+  const [buy, setBuy] = useState({});
+
   return (
     <UserContext.Provider value= {[loggedInUser, setLoggedInUser]}>
+    <BuyContext.Provider value= {[buy, setBuy]}>
     <Router>
       <Header></Header>
       <Switch>
@@ -40,6 +46,12 @@ function App() {
         <Route path="/deals">
           <Deals></Deals>
         </Route>
+        <Route path="/manage">
+          <Manage></Manage>
+        </Route>
+        <Route path="/checkout">
+          <Checkout></Checkout>
+        </Route>
         <Route exact path="/">
           <Home></Home>
         </Route>
@@ -48,6 +60,7 @@ function App() {
         </Route>
       </Switch>
   </Router>
+  </BuyContext.Provider>
   </UserContext.Provider>
   );
 }

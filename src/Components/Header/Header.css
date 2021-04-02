@@ -1,6 +1,3 @@
-.header img{
-    height: 80px;
-}
 .header{
     text-align: center;
 }
@@ -15,6 +12,8 @@ nav a{
     margin-right: 20px;
     padding: 5px;
 }
-nav a:hover{
-    background-color: gray;
+nav Link:hover{
+    background-color: rgb(195, 194, 194);
+    border: '1px solid gray';
+    border-radius: '7px';
 }

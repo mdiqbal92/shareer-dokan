@@ -7,8 +7,7 @@ const Header = () => {
     return (
         <div className='header'>
             <nav>
-                <h2 style={{color:'white'}}>Shareer Dokan</h2>
-                <hr/>
+                <h2 style={{color:'white', borderBottom: '1px solid lightGray'}}>Shareer Dokan</h2>
                 <Link to="/home">Home</Link>
                 <Link to="/orders">Orders</Link>
                 <Link to="/admin">Admin</Link>

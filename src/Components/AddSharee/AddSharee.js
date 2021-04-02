@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
+import { Link } from 'react-router-dom';
 
 const AddSharee = () => {
     const { register, handleSubmit} = useForm();
@@ -41,6 +42,9 @@ const AddSharee = () => {
 
     return (
         <div>
+          <Link to="/manage" className="btn btn-primary" style={{margin:'20px'}}>Manage </Link>
+          <Link to="/edit" className="btn btn-primary">Edit </Link>
+          <hr/>
           <h3>Add a new Sharee here</h3>
             <form style={{margin:'40px'}} className="container" onSubmit={handleSubmit(onSubmit)}>
                 <label htmlFor="name">Sharee Name</label>
