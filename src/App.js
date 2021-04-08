@@ -49,7 +49,7 @@ function App() {
         <Route path="/manage">
           <Manage></Manage>
         </Route>
-        <PrivateRoute path="/checkout">
+        <PrivateRoute path="/checkout/:_id">
           <Checkout></Checkout>
         </PrivateRoute>
         <Route exact path="/">

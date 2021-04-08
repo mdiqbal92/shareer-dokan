@@ -14,7 +14,7 @@ const AddSharee = () => {
       origin: data.origin,
       imageURL: imageURL
     }
-    const url = `http://localhost:5050/addSharee`;
+    const url = `https://rhubarb-cupcake-36196.herokuapp.com/addSharee`;
     fetch(url, {
       method: 'POST',
       headers: {

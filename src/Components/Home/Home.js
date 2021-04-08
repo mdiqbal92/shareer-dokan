@@ -14,6 +14,13 @@ const Home = () => {
         <div className ="container">
             <div className="row">
                 {
+                    sharee.length === 0 && <div class="d-flex justify-content-center">
+                    <div class="spinner-border" role="status">
+                      <span class="visually-hidden">Loading...</span>
+                    </div>
+                  </div>
+                }
+                {
                     sharee.map(sharee => <Sharee key={sharee} sharee={sharee}></Sharee>)
                 }
             </div>

@@ -1,14 +1,14 @@
 import React, { useContext } from 'react';
-import { useHistory} from 'react-router';
+import { useHistory} from 'react-router-dom';
 import { BuyContext } from '../../App';
 const Sharee = (props) => {
-    const {name, price, imageURL} = props.sharee;
+    const {_id,name, price, imageURL} = props.sharee;
     const [buy, setBuy] = useContext(BuyContext)
     console.log(buy);
     setBuy(props.sharee);
     const history = useHistory();
     const handleBuy = () => {
-        history.push('/checkout')
+        history.push(`/checkout/${_id}`)
         setBuy(props.sharee);
     }
     return (

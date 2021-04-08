@@ -1,20 +1,22 @@
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useState, } from 'react';
 import { useForm } from "react-hook-form";
-import { Link } from 'react-router-dom';
+import { Link,useHistory } from 'react-router-dom';
 
 const Admin = () => {
     const { register, handleSubmit} = useForm();
     const [imageURL, setImageURL] = useState(null);
+    const history = useHistory()
   
     const onSubmit = data => {
+    
     const shareeData = {
       name: data.name,
       price: data.price,
       origin: data.origin,
       imageURL: imageURL
     }
-    const url = `http://localhost:5050/addSharee`;
+    const url = `https://rhubarb-cupcake-36196.herokuapp.com/addSharee`;
     fetch(url, {
       method: 'POST',
       headers: {
@@ -24,6 +26,8 @@ const Admin = () => {
     })
     .then(res => console.log(res))
     console.log(shareeData)
+    alert('Sharee added Successfully')
+    history.push('/admin')
   };
   const handleImageUpload = (event) => {
       const imageData =new FormData();

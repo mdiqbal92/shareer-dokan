@@ -7,7 +7,7 @@ const Manage = () => {
         fetch('https://rhubarb-cupcake-36196.herokuapp.com/manage')
         .then(res => res.json())
         .then(data => setAllSharee(data))
-    },[])
+    },[allSharee])
     
     const deleteItem= (id) => {
         
@@ -25,10 +25,28 @@ const Manage = () => {
     return (
         <div className="container">
             <Link to="/admin" className="btn btn-primary" style={{margin:'20px'}}>Back to Admin</Link>
+            <table class="table">
+            <thead>
+                <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Origin</th>
+                <th scope="col">Price</th>
+                <th scope="col">Action</th>
+                </tr>
+            </thead>
+            </table>
             {allSharee.map(sharee => 
-                        <p>{sharee.name} - {sharee.origin} - {sharee.price} -
-                        <button className="btn btn-danger" onClick={()=>deleteItem(sharee._id)}>Delete</button> 
-                        <button className="btn btn-success">Update</button></p>
+            <table className="table">
+            <tbody>
+            <tr>
+            <td style={{textAlign: 'left'}}>{sharee.name}</td>
+            <td style={{textAlign: 'center'}}>{sharee.origin}</td>
+            <td style={{textAlign: 'right'}}>{sharee.price}</td>
+            <td style={{textAlign: 'right'}}><button className="btn btn-danger" onClick={()=>deleteItem(sharee._id)}>Delete</button> 
+            <button className="btn btn-success">Update</button></td>
+            </tr>
+            </tbody>
+            </table>
             )}
         </div>
     );
