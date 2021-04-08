@@ -5,7 +5,7 @@ import Sharee from '../Sharee/Sharee';
 const Home = () => {
     const [sharee, setSharee] = useState([])
     useEffect(()=>{
-        fetch('https://rhubarb-cupcake-36196.herokuapp.com/sharee')
+        fetch('https:/rhubarb-cupcake-36196.herokuapp.com/sharee')
         .then(res => res.json())
         .then(data => setSharee(data))
     },[])

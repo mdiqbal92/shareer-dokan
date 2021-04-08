@@ -4,7 +4,7 @@ const Checkout = () => {
     const {_id} = useParams();
     const [checkout, setCheckout] = useState({})
     useEffect(()=>{
-        fetch(`https://rhubarb-cupcake-36196.herokuapp.com/sharee/${_id}`)
+        fetch(`https:/rhubarb-cupcake-36196.herokuapp.com/sharee/${_id}`)
         .then(res=>res.json())
         .then(data=>setCheckout(data))
     },[_id])
@@ -16,7 +16,7 @@ const Checkout = () => {
             origin: checkout.origin,
             time: new Date()
           }
-        fetch('https://rhubarb-cupcake-36196.herokuapp.com/addOrder',{
+        fetch('https:/rhubarb-cupcake-36196.herokuapp.com/addOrder',{
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
