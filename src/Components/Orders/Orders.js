@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 const Orders = () => {
     const [order, setOrder] = useState([])
     useEffect(()=>{
-        fetch('https:/rhubarb-cupcake-36196.herokuapp.com/order')
+        fetch('https://rhubarb-cupcake-36196.herokuapp.com/order')
         .then(res=>res.json())
         .then(data => setOrder(data))
     },[])

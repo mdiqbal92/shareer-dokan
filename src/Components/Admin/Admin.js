@@ -16,7 +16,7 @@ const Admin = () => {
       origin: data.origin,
       imageURL: imageURL
     }
-    const url = `https:/rhubarb-cupcake-36196.herokuapp.com/addSharee`;
+    const url = `https://rhubarb-cupcake-36196.herokuapp.com/addSharee`;
     fetch(url, {
       method: 'POST',
       headers: {

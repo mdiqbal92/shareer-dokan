@@ -14,7 +14,7 @@ const AddSharee = () => {
       origin: data.origin,
       imageURL: imageURL
     }
-    const url = `https:/rhubarb-cupcake-36196.herokuapp.com/addSharee`;
+    const url = `https://rhubarb-cupcake-36196.herokuapp.com/addSharee`;
     fetch(url, {
       method: 'POST',
       headers: {
@@ -30,7 +30,7 @@ const AddSharee = () => {
       imageData.set('key', '9ef62d39af5551ceb76cc167e1d4a773')
       imageData.append('image', event.target.files[0])
 
-      axios.post('https://api.imgbb.com/1/upload', imageData)
+      axios.post('https://rhubarb-cupcake-36196.herokuapp.com', imageData)
       .then(function (response) {
         setImageURL(response.data.data.display_url);
       })
