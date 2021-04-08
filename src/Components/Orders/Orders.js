@@ -21,7 +21,6 @@ const Orders = () => {
             <table class="table">
             <thead>
                 <tr>
-                <th scope="col">User</th>
                 <th scope="col">Name</th>
                 <th scope="col">Origin</th>
                 <th scope="col">Price</th>
